@@ -4,7 +4,6 @@
  * @Himanshu Aggarwal    id-> 1911981022
  * 17/7/2021
  * Assignment -> 1
- * (Resource - gfg)
  */
 
 #include <stdio.h>
