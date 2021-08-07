@@ -1,13 +1,13 @@
 /*
- * Program to ...
+ * Program to implement circular queue.
  *
  * @Himanshu Aggarwal  ID -> 1911981022
  *
- * Assignment no. -> xx (name) 
+ * Assignment no. -> 04 (Stacks_and_Queues) 
  *
- *Date
+ *07/08/2021
  *
- * Question number -> xx
+ * Question number -> 02
  */
 #include <stdio.h>
 #define size 5
