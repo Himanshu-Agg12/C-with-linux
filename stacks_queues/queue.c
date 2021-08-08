@@ -53,11 +53,13 @@ int main()
     }while (ch != 0);
 }
 
+//time complexity is O(1)
 int peek(int queue[])
 {
     return queue[front];
 }
 
+//time complexity is O(1)
 int is_empty()
 {
     if(front == -1)
@@ -66,6 +68,7 @@ int is_empty()
         return 0;
 }
 
+//time complexity is O(1)
 void enqueue(int queue[], int item)
 {
     if ((front == 0 && rear == size - 1) || (front == rear + 1))
@@ -89,6 +92,7 @@ void enqueue(int queue[], int item)
     queue[rear] = item;
 }
 
+//time complexity is O(1)
 void display(int queue[])
 {
     int i;
@@ -109,6 +113,7 @@ void display(int queue[])
     }
 }
 
+//time complexity is O(1)
 void dequeue(int queue[])
 {
     if (front ==  - 1)
