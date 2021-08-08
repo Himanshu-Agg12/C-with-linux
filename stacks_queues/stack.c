@@ -17,6 +17,7 @@ int size = 5;
 int* stack;
 int top = -1;
 
+//time complexity is O(1)
 bool is_empty()
 {
     if (top == -1)
@@ -25,11 +26,13 @@ bool is_empty()
         return false;
 }
 
+//time complexity is O(1)
 void resize_stack(){
     stack = (int*) realloc(stack, (size*2)*sizeof(int));
     size = (size * 2);
 }
 
+//time complexity is O(1)
 void push(int value){
     if(top != size - 1){
         top = top + 1;
@@ -41,6 +44,7 @@ void push(int value){
     }
 }
 
+//time complexity is O(1)
 void pop() {
     if (is_empty())
         printf("\nCan't delete as Stack is already empty.{Underflow}\n");
@@ -51,6 +55,7 @@ void pop() {
     }
 }
 
+//time complexity is O(1)
 int peek() {
     if (top != -1)
         return *(stack + top);
@@ -58,6 +63,7 @@ int peek() {
         return -1;
 }
 
+//time complexity is O(1)
 void print() {
     int i = top;
     while(i >= 0){
