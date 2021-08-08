@@ -1,0 +1,41 @@
+##Approach:
+
+Puzzle says the king have 1000 bottles so we can represent 1000 in binary by 10 bit that is 2^10(1024 >= 100).
+We will assign numbers 1 to 10 to all the 10 prisoners also will assign 1 to 1000 to all the win bottles,
+and make the set of bottles according to the below algorithm:
+
+##Algorithm:
+
+1) we will represent the numbers in binary fashion.
+2) Firstly we will give the 1st prisoner that bottles in which the 1st bit(LSB) is 'ON'(or 1)
+3) Repeat the process until all the bottles distributed among all the prisoners.
+4) Each prisoner will get approximately 100 bottles to test.
+5) Now after 7days all those prisoner dies which had tasted that poisined bottle.
+
+##Lets take the Example:
+
+Considring 10 digit binary.
+
+Bottle 1 => 0000000001
+Bottle 2 => 0000000010
+.
+.
+.
+.
+.
+Bottle 999 => 1111100111
+Bottle 1000 => 1111101000
+
+Now let bottle no 999th is poisoned: 
+
+prisoners who get bottles accordingly
+10 9 8 7 6 5 4 3 2 1
+1  1 1 1 1 0 0 1 1 1 (binary of 999)
+we can clearly see that prisoner number 10, 9, 8, 7, 6, 3, 2, 1 will die.
+
+##Result:
+
+so we clearly see that the imposter bottle is 999th.
+
+Hence after 7days we will save all the rest 999 bottles are safe to drink
+King can enjoy his party.
