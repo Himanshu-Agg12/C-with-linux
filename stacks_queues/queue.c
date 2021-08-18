@@ -1,13 +1,13 @@
 /*
- * Program to implement circular queue.
+ * Program to ...
  *
  * @Himanshu Aggarwal  ID -> 1911981022
  *
- * Assignment no. -> 04 (Stacks_and_Queues) 
+ * Assignment no. -> xx (name) 
  *
- *07/08/2021
+ *Date
  *
- * Question number -> 02
+ * Question number -> xx
  */
 #include <stdio.h>
 #define size 5
@@ -53,13 +53,11 @@ int main()
     }while (ch != 0);
 }
 
-//time complexity is O(1)
 int peek(int queue[])
 {
     return queue[front];
 }
 
-//time complexity is O(1)
 int is_empty()
 {
     if(front == -1)
@@ -68,7 +66,6 @@ int is_empty()
         return 0;
 }
 
-//time complexity is O(1)
 void enqueue(int queue[], int item)
 {
     if ((front == 0 && rear == size - 1) || (front == rear + 1))
@@ -92,7 +89,6 @@ void enqueue(int queue[], int item)
     queue[rear] = item;
 }
 
-//time complexity is O(1)
 void display(int queue[])
 {
     int i;
@@ -113,7 +109,6 @@ void display(int queue[])
     }
 }
 
-//time complexity is O(1)
 void dequeue(int queue[])
 {
     if (front ==  - 1)
