@@ -60,21 +60,30 @@ void push_front(int val){
     }
 }
 
-//TODo
-
 //it removes the last element...
-//Time Compexit: O(1)
+//Time Compexity: O(n)....can be done in O(1) if we use doubly linked list.
 void pop_back(){
-    struct linkedlist *ptr =  (struct linkedlist *)malloc(sizeof(struct linkedlist));
+    struct linkedlist *ptr;
+    ptr = head;
 
     if(tail == NULL)
         printf("\nDequeue is empty!!\n\n");
+    else if(head == tail){
+        free(tail);
+        tail = head = NULL;
+    }
+
+
     else{
-        ptr = tail;
+        while(ptr -> next != tail){
+            ptr = ptr -> next;
+        }
+        struct linkedlist *temp =  (struct linkedlist *)malloc(sizeof(struct linkedlist));
+        temp = tail;
         ptr -> next = NULL;
-        tail = NULL;
-        printf("\nDequeued element is %d\n", ptr->value);
-        free(ptr);
+        tail = ptr;
+        printf("\nDequeued element is %d\n", temp->value);
+        free(temp);
     }
 }
 
