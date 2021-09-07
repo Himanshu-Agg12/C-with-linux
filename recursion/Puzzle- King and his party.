@@ -33,7 +33,7 @@ prisoners who get bottles accordingly
 1  1 1 1 1 0 0 1 1 1 (binary of 999)
 we can clearly see that prisoner number 10, 9, 8, 7, 6, 3, 2, 1 will die.
 
-##Result:
+##Result->
 
 so we clearly see that the imposter bottle is 999th.
 
