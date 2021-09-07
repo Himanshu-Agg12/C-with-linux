@@ -9,8 +9,11 @@
  */
 #include <stdio.h>
 
+//function for reversal.
 void reverse(int* array, int size){
     int back = size;
+	
+    //swapping first and last elements till reaches middle.
     for(int front=0; front<size/2; front++){
         int temporary = *(array+front);
 	*(array+front) = *(array+back-1);
@@ -21,6 +24,8 @@ void reverse(int* array, int size){
 
 int main()
 {
+    
+    //declaring array
     int array[5] = {1, 2, 3, 4, 5};
 
     printf("Array before reverse:\n");
@@ -28,6 +33,8 @@ int main()
     for(int index = 0; index<5; index++){
 	printf("%d ", array[index]);
     }
+	
+    //passing by refrence.
     reverse(array, 5);
 
     printf("\nArray after reverse:\n");
