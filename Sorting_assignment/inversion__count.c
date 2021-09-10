@@ -30,7 +30,7 @@ int compare(int arr[], int s, int m, int e)
     }
 
     while(r_ind < right_size){
-         arr[ind++] = right_arr[r_ind];
+         arr[ind++] = right_arr[r_ind++];
     }
 
     return count;
