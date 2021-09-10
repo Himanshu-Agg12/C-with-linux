@@ -2,8 +2,8 @@
 
 int compare(int arr[], int s, int m, int e)
 {
-    int left_size = m - s;
-    int right_size = e - m - 1;
+    int left_size = m - s + 1;
+    int right_size = e - m;
     int left_arr[left_size];
     int right_arr[right_size];
     for(int i = 0; i < left_size; i++){
@@ -38,15 +38,13 @@ int compare(int arr[], int s, int m, int e)
 
 int count_inversion(int arr[], int start, int end)
 {   int count = 0;
-    // if(start >= end)
-    //     return count;
-    if(start < end){
+    if(start >= end)
+        return count;
+        
     int mid = (start + end) / 2;
     count += count_inversion(arr, start, mid);
     count += count_inversion(arr, mid + 1, end);
     count += compare(arr, start, mid, end);
-    }
-    return count;
 }
 
 int main()
@@ -60,7 +58,7 @@ int main()
     {
         scanf("%d", &array[i]);
     }
-    int ans = count_inversion(array, 0, size);
+    int ans = count_inversion(array, 0, size-1);
     printf("%d\n", ans);
     return 0;
 }
