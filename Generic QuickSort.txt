@@ -1,0 +1,91 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+//lib func
+void swap (void **a, int i, int j)
+{
+  void *temp = a[i];
+  a[i] = a[j];
+  a[j] = temp;
+}
+
+//our func
+// int int_cmp (int *a, int *b)
+// {
+//   if (*a == *b)
+//     return 0;
+//   else if (*a > *b)
+//     return 1;
+//   else
+//     return -1;
+// }
+
+int ch_cmp (void* a, void* b)
+{
+  char* x = (char*) a;
+  char* y = (char*) b;
+  return *x - *y;
+}
+
+
+//lib func
+int func(void **a, int l, int r, int (*cmp) (void *, void *))
+{
+  // void* pivot = *a[r];
+  int last = l - 1, i = l;
+  for (; i < r; i++)
+    {
+      if ((*cmp) (a[i], a[r]) < 0)
+	{
+	  last++;
+	  swap (a, i, last);
+	}
+    }
+  swap (a, last + 1, r);
+  return last + 1;
+}
+
+//lib func
+void q_sort (void **a, int l, int r, int (*cmp) (void *, void *))
+{
+  if (l < r)
+    {
+      int pi = func ((void **) a, l, r, ch_cmp);
+      q_sort ((void **) a, l, pi - 1, ch_cmp);
+      q_sort ((void **) a, pi + 1, r, ch_cmp);
+    }
+  else
+    return;
+}
+
+//our func
+void print (char **a, int r)
+{
+  for (int i = 0; i <= r; i++)
+    {
+      printf ("%c ", *a[i]);
+    }
+  printf ("\n");
+}
+
+int main ()
+{
+  char **a = (char **) malloc (sizeof (char *) * 5);
+  char a1 = 'a';
+  char a2 = 'c';
+  char a3 = 'd';
+  char a4 = 'e';
+  char a5 = 'b';
+
+  a[0] = &a1;
+  a[1] = &a2;
+  a[2] = &a3;
+  a[3] = &a4;
+  a[4] = &a5;
+
+  print (a, 4);
+  q_sort ((void **) a, 0, 4, ch_cmp);
+  print (a, 4);
+
+  return 0;
+}
